@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/CC/DB1">
+        <file>ChemCalc_data.db</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>ChemCalc_help1.md</file>
+        <file>ChemCalc.conf</file>
+        <file>chemcalc_icon_120.svg</file>
+    </qresource>
+    <qresource prefix="/Icons"/>
+</RCC>

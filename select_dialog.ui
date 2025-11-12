@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Select_Dialog</class>
+ <widget class="QDialog" name="Select_Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>732</width>
+    <height>508</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QTableView" name="tableView">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>80</y>
+     <width>671</width>
+     <height>341</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>561</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Select the Reagent to Use, or Click Cancel.</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_OK">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>440</y>
+     <width>97</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>OK</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Cancel">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>440</y>
+     <width>97</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Cancel</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton_OK</sender>
+   <signal>clicked()</signal>
+   <receiver>Select_Dialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>531</x>
+     <y>458</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>527</x>
+     <y>500</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

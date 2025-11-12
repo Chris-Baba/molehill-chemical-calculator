@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Preferences_Dialog</class>
+ <widget class="QDialog" name="Preferences_Dialog">
+  <property name="windowModality">
+   <enum>Qt::WindowModality::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>517</width>
+    <height>656</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ChemCalc-Preferences</string>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>20</y>
+     <width>331</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>ChemCalc Preferences</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>450</y>
+     <width>471</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Allow Internet Access?</string>
+   </property>
+   <widget class="QCheckBox" name="checkBox_DontAsk">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>80</y>
+      <width>401</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Don't Ask for Internet Access at Startup.</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_Allow">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>411</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Allow Internet Access to PubChem</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+    <property name="tristate">
+     <bool>false</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QDialogButtonBox" name="buttonBox">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>590</y>
+     <width>166</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="textEdit">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>80</y>
+     <width>471</width>
+     <height>351</height>
+    </rect>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Noto Sans'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ChemCalc defaults to allowing internet access to look up molecular weights (MW) from PubChem.  (No information is ever collected by ChemCalc.)  &lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When you click &amp;quot;Find MW&amp;quot; your local database is searched first. By default if no local results are found then PubChem is searched. PubChem is sent your IP address and the text in the &amp;quot;Reagent Name&amp;quot; box in order to find the molecular weight.  The privacy policy at PubChem is available at&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://pubchem.ncbi.nlm.nih.gov/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;https://pubchem.ncbi.nlm.nih.gov/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline; color:#007af4;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;We strongly suggest allowing internet acces for the best user experience.  However, if you don't have internet access, or don't want ChemCalc to use PubMed to look up molecular weights, then change your preferences below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="textInteractionFlags">
+    <set>Qt::TextInteractionFlag::LinksAccessibleByMouse|Qt::TextInteractionFlag::TextEditable|Qt::TextInteractionFlag::TextEditorInteraction|Qt::TextInteractionFlag::TextSelectableByKeyboard|Qt::TextInteractionFlag::TextSelectableByMouse</set>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
