@@ -17,7 +17,6 @@ public:
     Ui::about_Dialog *ui;
 
 private:
-
 };
 
 #endif // ABOUT_DIALOG_H

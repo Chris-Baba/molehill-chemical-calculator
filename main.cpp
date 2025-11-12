@@ -1,8 +1,8 @@
 #include <QApplication>
-#include <QGuiApplication> //?
-#include <QDebug>
 #include <QCommandLineParser>
 #include <QCoreApplication>
+#include <QDebug>
+#include <QGuiApplication> //?
 #include <QLoggingCategory>
 
 #include "mainwindow.h"
@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
 
     //--- Read commandline options.
-    bool verbose = false;  // Defaults to no qDebug output.
+    bool verbose = false; // Defaults to no qDebug output.
     QCoreApplication::setApplicationName("ChemCalc");
     QCommandLineParser parser;
     parser.setApplicationDescription("A Chemical Calculator");
@@ -28,10 +28,10 @@ int main(int argc, char *argv[])
     // Process the actual command line arguments given by the user
     parser.process(app);
     verbose = parser.isSet(verboseOption);
-    if (!verbose){
+    if (!verbose) {
         // This turns off qDebug messages in all chemcalc code.
         // Comment out next line (and revert when done) for IDE debugging.
-        QLoggingCategory::setFilterRules("*.debug=false");  //<-- UNCOMMENT <<--<<--
+        QLoggingCategory::setFilterRules("*.debug=false"); //<-- UNCOMMENT <<--<<--
     };
     //----
 

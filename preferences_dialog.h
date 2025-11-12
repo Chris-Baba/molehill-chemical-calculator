@@ -3,7 +3,6 @@
 
 #include <QDialog>
 
-
 namespace Ui {
 class Preferences_Dialog;
 }
@@ -15,7 +14,7 @@ class Preferences_Dialog : public QDialog
 public:
     explicit Preferences_Dialog(QWidget *parent = nullptr);
     ~Preferences_Dialog();
-    friend class MainWindow;  //Allows access to MainWindow functions/
+    friend class MainWindow; //Allows access to MainWindow functions/
     QString parseConfigFile(QString, bool, bool);
 
 private slots:

@@ -1,15 +1,14 @@
-#include <QPrinter>
-#include <QPrintDialog>
-#include <QtWidgets>
+#include "mprintdialog.h"
+#include <QDebug>
 #include <QDialog>
 #include <QFile>
 #include <QFileDialog>
-#include <QTextStream>
-#include <QDebug>
-#include <QTextEdit>
 #include <QObject>
+#include <QPrintDialog>
+#include <QPrinter>
 #include <QTextEdit>
-#include "mprintdialog.h"
+#include <QTextStream>
+#include <QtWidgets>
 #include "ui_mprintdialog.h"
 
 QString mPrintDialog::g_print_text = "Chemical Calculator Results: \n\n";
@@ -49,16 +48,18 @@ void mPrintDialog::on_pushButton_Save_clicked()
     //Code to be able to select file name and path.
     //TODO - Add suggested default filename (ChemCalcSave.txt ??).
     //QString fileNameHint = "ChemCalc_Output.txt";
-    QString print_save_path_filename = QFileDialog::getSaveFileName(this, tr("Save File"),"~/ChemCalcResults.txt");
+    QString print_save_path_filename = QFileDialog::getSaveFileName(this,
+                                                                    tr("Save File"),
+                                                                    "~/ChemCalcResults.txt");
     qDebug() << "print_save_path_filename= " << print_save_path_filename;
 
     //Try to create and open the file for writing.
     //Return on no file name error, and skip rest of code.
-    if (print_save_path_filename.isEmpty()){
+    if (print_save_path_filename.isEmpty()) {
         return;
     }
     QFile mfile(print_save_path_filename);
-    if(!mfile.open(QFile::WriteOnly | QFile::Text)){
+    if (!mfile.open(QFile::WriteOnly | QFile::Text)) {
         qDebug() << "Could not open file for text writing.";
         return;
     }
@@ -67,16 +68,16 @@ void mPrintDialog::on_pushButton_Save_clicked()
     out << final_text;
     qDebug() << "Final text= " << final_text;
     mfile.flush();
-    mfile.close();  //Close file - IMPORTANT!
+    mfile.close(); //Close file - IMPORTANT!
 }
-
 
 //QString mPrintDialog::show_printList(QString print_list_text)
 void mPrintDialog::show_printList(QString print_list_text)
 {
     qDebug() << "'show_printList' called (in mprintdialog.cpp).";
     ui2->textEdit->setPlainText(print_list_text);
-    qDebug() << "'In mPrintDialog::show_printList' After 'ui2->textEdit->setPlainText(print_list_text)' " ;
+    qDebug() << "'In mPrintDialog::show_printList' After "
+                "'ui2->textEdit->setPlainText(print_list_text)' ";
 }
 
 void mPrintDialog::on_mPrintDialog_finished(int result)
@@ -86,9 +87,7 @@ void mPrintDialog::on_mPrintDialog_finished(int result)
     qDebug() << "In 'mPrintDialog_finished' STARTED.";
     QString final_text = ui2->textEdit->toPlainText();
     //Add a 'newline (\n)' at end of previous text.
-    final_text.append( "\n");
+    final_text.append("\n");
     qDebug() << "In 'mPrintDialog_finished', 'final_text = " << final_text;
     mPrintDialog::g_print_text = final_text;
 }
-
-

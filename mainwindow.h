@@ -1,18 +1,17 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
-#include <QObject>
-#include <QMessageBox>
 #include <QList>
+#include <QMainWindow>
+#include <QMessageBox>
+#include <QObject>
 
-#include "mprintdialog.h"
 #include "edit_dialog.h"
+#include "mprintdialog.h"
+#include "preferences_dialog.h"
 #include "qnetworkreply.h"
 #include "qsqltablemodel.h"
 #include "qtableview.h"
-#include "preferences_dialog.h"
-
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -33,15 +32,18 @@ public:
     friend class Edit_Dialog;
     friend class Preferences_Dialog;
 
-    void cc_msgBox(QString msgText, QString msgText2 ="", QString msgText3="", \
-                    MainWindow *parent = nullptr);
+    void cc_msgBox(QString msgText,
+                   QString msgText2 = "",
+                   QString msgText3 = "",
+                   MainWindow *parent = nullptr);
 
     void on_pushButton_DeleteRow_clicked();
     QString read_starting_reagent();
-    int db_Save(QString reagent_name, QString mw, bool skipConfirmationMessage=false);
+    int db_Save(QString reagent_name, QString mw, bool skipConfirmationMessage = false);
 
     QString UIDString;
-    struct entrezData{
+    struct entrezData
+    {
         QString WebEnv;
         QString QueryKey;
         QString UIDString;
@@ -117,16 +119,13 @@ private slots:
     bool checkForDataBase();
     bool checkForConfigurationFile();
 
-    static QString parseConfigFile(QString searchTerm, bool replace, \
-                                   bool replacementTerm);
+    static QString parseConfigFile(QString searchTerm, bool replace, bool replacementTerm);
     void setConfigGlobals();
     void on_actionPreferences_triggered();
 
 private:
-
     mPrintDialog *pd;
     QSqlTableModel *model;
     QTableView *view;
-
 };
 #endif // MAINWINDOW_H
