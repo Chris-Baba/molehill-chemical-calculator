@@ -1,8 +1,8 @@
-**Chemical Calculator Help**
+**Molehill Chemical Calculator Help**
 
 Quick Start
 
-The easiest way to learn how to use Chemical Calculator is to jump right in with some examples.  HINT: Move this window to one side of Chemical Calculator so that you can read this and enter data at the same time.  
+The easiest way to learn how to use Molehill Chemical Calculator is to jump right in with some examples.  HINT: Move this window to one side of so that you can read this and enter data at the same time.  
 
 Fill in the information needed in box 1 and continue to box 4 and press the 'Calculate' button.
 
