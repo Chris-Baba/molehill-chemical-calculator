@@ -11,7 +11,7 @@
 #include <QtWidgets>
 #include "ui_mprintdialog.h"
 
-QString mPrintDialog::g_print_text = "Chemical Calculator Results: \n\n";
+QString mPrintDialog::g_print_text = "Molehill Chemical Calculator Results: \n\n";
 
 mPrintDialog::mPrintDialog(QWidget *parent)
     : QDialog(parent)

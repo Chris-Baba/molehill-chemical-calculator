@@ -89,7 +89,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    setWindowTitle("Chemical Calculator");
+    setWindowTitle("Molehill Chemical Calculator");
 
     // Runs once at start, to setup file locations, database, config files etc.
     runAtStart();
