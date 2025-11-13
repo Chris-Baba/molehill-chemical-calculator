@@ -442,6 +442,7 @@ void MainWindow::on_actionChemCalc_Help_triggered()
     QTextBrowser *ccHelp = new QTextBrowser(this);
     ccHelp->setWindowFlag(Qt::Window);
     ccHelp->setWindowModality(Qt::NonModal);
+    ccHelp->setWindowTitle("Molehill Chemical Calculator Help");
     ccHelp->setSource(QUrl("qrc:/ChemCalc_help1.md"));
     ccHelp->resize(500, 700); // WxH adjust W for width of images + 40.
     ccHelp->show();
@@ -474,7 +475,7 @@ void MainWindow::cc_msgBox(QString msgText, QString msgText2, QString msgText3, 
     msgBox.setParent(parent);
     msgBox.setIcon(QMessageBox::Information);
     msgBox.setWindowModality(Qt::WindowModal);
-    msgBox.setWindowTitle("ChemCalc");
+    msgBox.setWindowTitle("Molehill Chemical Calculator");
     msgBox.exec();
 }
 
@@ -1778,7 +1779,7 @@ void MainWindow::processReturnedText2(QByteArray myByteArray2)
             msgBox2.setParent(this);
             msgBox2.setIcon(QMessageBox::Question);
             msgBox2.setWindowModality(Qt::WindowModal);
-            msgBox2.setWindowTitle("ChemCalc");
+            msgBox2.setWindowTitle("Molehill Chemical Calculator");
             msgBox2.setStandardButtons(QMessageBox::Open | QMessageBox::No | QMessageBox::Cancel);
             msgBox2.setDefaultButton(QMessageBox::Cancel);
             int ret2 = msgBox2.exec();
@@ -1814,7 +1815,7 @@ void MainWindow::askToUseAndSave(QString chemNameReturned, QString molecularWeig
     msgBox5.setParent(this);
     msgBox5.setIcon(QMessageBox::Question);
     msgBox5.setWindowModality(Qt::WindowModal);
-    msgBox5.setWindowTitle("ChemCalc");
+    msgBox5.setWindowTitle("Molehill Chemical Calculator");
     msgBox5.setStandardButtons(QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel);
     msgBox5.setDefaultButton(QMessageBox::Cancel);
     int ret5 = msgBox5.exec();
@@ -1835,7 +1836,7 @@ void MainWindow::askToUseAndSave(QString chemNameReturned, QString molecularWeig
     msgBox.setParent(this);
     msgBox.setIcon(QMessageBox::Question);
     msgBox.setWindowModality(Qt::WindowModal);
-    msgBox.setWindowTitle("ChemCalc");
+    msgBox.setWindowTitle("Molehill Chemical Calculator");
     msgBox.setStandardButtons(QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
     msgBox.setDefaultButton(QMessageBox::Cancel);
     int ret = msgBox.exec();
@@ -1858,7 +1859,7 @@ void MainWindow::askToUseAndSave(QString chemNameReturned, QString molecularWeig
             msgBox3.setParent(this);
             msgBox3.setIcon(QMessageBox::Question);
             msgBox3.setWindowModality(Qt::WindowModal);
-            msgBox3.setWindowTitle("ChemCalc");
+            msgBox3.setWindowTitle("Molehill Chemical Calculator");
             msgBox3.setStandardButtons(QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel);
             msgBox3.setDefaultButton(QMessageBox::Cancel);
             int ret3 = msgBox3.exec();
@@ -1886,7 +1887,7 @@ void MainWindow::askToUseAndSave(QString chemNameReturned, QString molecularWeig
                 msgBox4.setParent(this);
                 msgBox4.setIcon(QMessageBox::Question);
                 msgBox4.setWindowModality(Qt::WindowModal);
-                msgBox4.setWindowTitle("ChemCalc");
+                msgBox4.setWindowTitle("Molehill Chemical Calculator");
                 msgBox4.setStandardButtons(QMessageBox::Cancel);
                 msgBox4.setDefaultButton(QMessageBox::Cancel);
                 QPushButton *use1Button = msgBox4.addButton("Use 1", QMessageBox::ActionRole);

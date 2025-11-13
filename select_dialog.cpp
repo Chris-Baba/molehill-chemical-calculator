@@ -45,7 +45,7 @@ Select_Dialog::Select_Dialog(QWidget *parent)
     ui4->setupUi(this);
 
     qDebug() << "Select_Dialog::Select_Dialog Constructor - STARTED";
-    setWindowTitle("Select From Database - ChemCalc");
+    setWindowTitle("Molehill - Select From Database");
 
     qDebug() << "In select_dialog constructor, g_db.isValid() = " << MainWindow::g_db.isValid();
     if (!MainWindow::g_db.isValid()) {

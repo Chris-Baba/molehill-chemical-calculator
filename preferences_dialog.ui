@@ -14,7 +14,10 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>ChemCalc-Preferences</string>
+   <string>Molehill Chemical Calculator Preferences</string>
+  </property>
+  <property name="windowOpacity">
+   <double>-2.000000000000000</double>
   </property>
   <property name="modal">
    <bool>true</bool>

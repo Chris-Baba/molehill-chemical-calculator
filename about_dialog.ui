@@ -14,7 +14,10 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>About Chemical Calculator</string>
+   <string>About Molehill Chemical Calculator</string>
+  </property>
+  <property name="windowOpacity">
+   <double>0.000000000000000</double>
   </property>
   <property name="modal">
    <bool>true</bool>

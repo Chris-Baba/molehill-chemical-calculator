@@ -57,7 +57,7 @@ Edit_Dialog::Edit_Dialog(QWidget *parent)
     ui3->setupUi(this); //This is QtCreator code to make GUI.
 
     qDebug() << "Edit_Dialog::Edit_Dialog Constructor - STARTED";
-    setWindowTitle("Edit Database");
+    setWindowTitle("Molehill Chemical Calculator - Edit Database");
     // QSqlDatabase db;
 
     qDebug() << "In Edit_Dialog, g_db.isValid() = " << MainWindow::g_db.isValid();

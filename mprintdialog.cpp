@@ -18,7 +18,7 @@ mPrintDialog::mPrintDialog(QWidget *parent)
     , ui2(new Ui::mPrintDialog)
 {
     ui2->setupUi(this);
-    setWindowTitle("Print List - ChemCalc");
+    setWindowTitle("Molehill - Print List");
 }
 
 mPrintDialog::~mPrintDialog()
