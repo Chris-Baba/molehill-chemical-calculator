@@ -1,4 +1,4 @@
-*NOTE: (October 31, 2024) Now In Beta Release for Arch Linux.*
+*NOTE: (November 13, 2025) DO NOT USE THIS YET.*
 
 **ChemCalc (Chemical Calculator) is an application that calculates the amount of reagents to
 use when mixing up chemical solutions.**
