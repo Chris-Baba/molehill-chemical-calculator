@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.11)
 
 project(molehill VERSION 0.2.0 LANGUAGES CXX)
 
@@ -42,6 +42,11 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         preferences_dialog.h
         preferences_dialog.cpp
         preferences_dialog.ui
+        README.md
+        PKGBUILD
+        ChemCalc-Main-Screen.png
+        ChemCalc-Results-Printout.png
+        ChemCalc-Edit-Database.png
     )
 
 # Define target properties for Android with Qt 6 as:
