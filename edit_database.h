@@ -34,6 +34,8 @@ private slots:
     void accept();
     void reject();
     void submit();
+
+
 };
 
 #endif // EDIT_DATABASE_H

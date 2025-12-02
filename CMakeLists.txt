@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.11)
+cmake_minimum_required(VERSION 3.12)
 
 project(molehill VERSION 0.2.0 LANGUAGES CXX)
 
@@ -9,8 +9,8 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 REQUIRED COMPONENTS Core Widgets PrintSupport Sql Gui Network Xml)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Widgets PrintSupport Sql Gui Network Xml)
+find_package(QT NAMES Qt6 REQUIRED COMPONENTS Core Widgets PrintSupport Sql Gui Network Xml DBus)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Widgets PrintSupport Sql Gui Network Xml DBus)
 
 set(PROJECT_SOURCES
         main.cpp
@@ -42,12 +42,6 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         preferences_dialog.h
         preferences_dialog.cpp
         preferences_dialog.ui
-        README.md
-        PKGBUILD
-        ChemCalc-Main-Screen.png
-        ChemCalc-Results-Printout.png
-        ChemCalc-Edit-Database.png
-
     )
 
 # Define target properties for Android with Qt 6 as:
@@ -108,3 +102,8 @@ install(FILES chemcalc_icon_120.svg
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(chemcalc)
 endif()
+
+## Note: The next steps are DEPLOYMENT (windeployqt.exe,
+## and make a INSTALLER (~/Qt/Tools/QtInstallerFramework/4.10/bin/binarycreator).
+## See https://doc.qt.io/qtinstallerframework/ifw-tutorial.html
+

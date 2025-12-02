@@ -1,34 +1,34 @@
-#include <QMap>
 #include <QSql>
+#include <QMap>
+#include <QSqlRecord>
 #include <QSqlDatabase>
+#include <QSqlTableModel>
 #include <QSqlQuery>
 #include <QSqlQueryModel>
-#include <QSqlRecord>
-#include <QSqlTableModel>
 
+#include <QTableView>
 #include <QAbstractItemModel>
 #include <QAbstractItemView>
 #include <QAbstractTableModel>
 #include <QPersistentModelIndex>
+#include <QSqlIndex>
 #include <QSqlError>
 #include <QSqlField>
-#include <QSqlIndex>
-#include <QTableView>
 
+#include <QPrinter>
+#include <QString>
+#include <QPrintDialog>
 #include <QDialog>
 #include <QLabel>
 #include <QMainWindow>
 #include <QObject>
-#include <QPrintDialog>
-#include <QPrinter>
-#include <QString>
 
-#include <QFile>       //REMOVE?
-#include <QFileDialog> //REMOVE?
+#include <QRadioButton>
 #include <QLineEdit>
 #include <QMessageBox>
-#include <QRadioButton>
-#include <QTextStream> //REMOVE?
+#include <QFile>    //REMOVE?
+#include <QFileDialog>  //REMOVE?
+#include <QTextStream>  //REMOVE?
 
 #include <QDebug>
 #include <QTextEdit>
@@ -45,10 +45,11 @@ Select_Dialog::Select_Dialog(QWidget *parent)
     ui4->setupUi(this);
 
     qDebug() << "Select_Dialog::Select_Dialog Constructor - STARTED";
-    setWindowTitle("Molehill - Select From Database");
+    setWindowTitle("Select From Database - ChemCalc");
 
-    qDebug() << "In select_dialog constructor, g_db.isValid() = " << MainWindow::g_db.isValid();
-    if (!MainWindow::g_db.isValid()) {
+    qDebug() << "In select_dialog constructor, g_db.isValid() = " <<
+                MainWindow::g_db.isValid();
+    if (!MainWindow::g_db.isValid()){
         qDebug() << "In select_dialog -B";
         MainWindow::g_db = QSqlDatabase::addDatabase("QSQLITE");
     }
@@ -70,7 +71,7 @@ Select_Dialog::Select_Dialog(QWidget *parent)
     view = ui4->tableView;
     view->setModel(model);
     view->setColumnWidth(0, 510);
-    view->setColumnWidth(1, 75);
+    view->setColumnWidth(1,75);
     view->setWordWrap(true);
     view->setSortingEnabled(true);
     view->resizeRowsToContents();
@@ -94,7 +95,7 @@ void Select_Dialog::on_pushButton_Cancel_clicked()
 }
 
 void Select_Dialog::on_pushButton_OK_clicked()
-{
+{ 
     close();
 }
 
@@ -115,15 +116,15 @@ void Select_Dialog::on_tableView_clicked(const QModelIndex &index)
     qDebug() << "selected_column = " << selected_column;
 
     QString mw = index.siblingAtColumn(1).data().toString();
-    qDebug() << "mw = " << mw;         //MW as a QSTRING, local variable only.
-    Edit_Dialog::g_mw = mw.toDouble(); //MW as a DOUBLE
-    Edit_Dialog::g_mw_string = mw;     //MW as a String
+    qDebug() << "mw = " << mw;   //MW as a QSTRING, local variable only.
+    Edit_Dialog::g_mw = mw.toDouble();  //MW as a DOUBLE
+    Edit_Dialog::g_mw_string = mw;  //MW as a String
     qDebug() << "Edit_Dialog::g_mw = " << Edit_Dialog::g_mw;
     qDebug() << "Edit_Dialog::g_mw_string = " << Edit_Dialog::g_mw_string;
 
     QString reagent = index.siblingAtColumn(0).data().toString();
     qDebug() << "Reagent = " << reagent;
-    Edit_Dialog::g_reagent = reagent; // ("Reagent");
+    Edit_Dialog::g_reagent = reagent;   // ("Reagent");
     qDebug() << "Edit_Dialog::g_reagent = " << Edit_Dialog::g_reagent;
     qDebug() << "End of on_tableview_clicked()";
 }
@@ -137,14 +138,14 @@ int Select_Dialog::chem_db_read(QString reagent_fragment)
     // The sql syntax is different (truncated) from other times.
     // Don't use the long SQL syntax, use the short version below.
     // sql = ("SELECT * FROM USER WHERE reagent LIKE '" + reagent_fragment +"%'") //Long, incorrect version.
-    QString sql = ("reagent LIKE '" + reagent_fragment
-                   + "%'"); // Correct short version for sqlite and Qt.
+    QString sql = ("reagent LIKE '" + reagent_fragment +"%'"); // Correct short version for sqlite and Qt.
     qDebug() << "sql = " << sql;
     model->setFilter(sql);
-    model->select(); // Selects all data left after filter above.
+    model->select();   // Selects all data left after filter above.
     int mySize = model->rowCount();
     qDebug() << "Select_Dialog::chem_db_read()-MYSIZE = " << mySize;
     qDebug() << "ENDED Select_Dialog::chem_db_read()";
     //Do cc_msgBox info upon return to MainWindow (using int 'MySize').
     return mySize;
 }
+

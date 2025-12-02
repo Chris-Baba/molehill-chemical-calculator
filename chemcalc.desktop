@@ -2,9 +2,9 @@
 Categories=Science
 Comment=A Chemical Calculator
 Exec=chemcalc
-GenericName=Molehill Chemical Calculator
+GenericName=Chemical Calculator
 Icon=chemcalc_icon_120.svg
-Name="Molehill Chemical Calculator"
+Name=ChemCalc
 NoDisplay=false
 StartupNotify=true
 Terminal=0
@@ -13,6 +13,6 @@ Type=Application
 Version=1.0
 X-KDE-SubstituteUID=false
 #####################
-# Testing number 002
+# Testing number 001
 # On my linux computer this file is located at:
 # /usr/share/applications/chemcalc.desktop

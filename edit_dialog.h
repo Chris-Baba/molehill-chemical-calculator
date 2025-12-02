@@ -2,8 +2,8 @@
 #define EDIT_DIALOG_H
 
 #include <QDialog>
-#include <QObject>
 #include <QSql>
+#include <QObject>
 #include <QSqlTableModel>
 #include <QTableView>
 
@@ -40,18 +40,20 @@ public:
 
 public slots:
 
+
 private slots:
     void on_pushButton_Cancel_clicked();
     // void on_pushButton_OK_clicked(const QModelIndex &index);
     void on_pushButton_DeleteRow_clicked();
     void on_pushButton_AddRow_clicked();
     void user_selected_index(QModelIndex selected_index);
-    //  void select_from_database(QString reagent_fragment);
+  //  void select_from_database(QString reagent_fragment);
     void on_tableView_clicked(const QModelIndex &index);
     void on_pushButton_OK_clicked();
 
 private:
     // Ui::Edit_Dialog *ui3;
+
 };
 
 #endif // EDIT_DIALOG_H

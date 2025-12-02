@@ -1,22 +1,27 @@
-#include "edit_database.h"
-#include <QAbstractItemView>
-#include <QAbstractTableModel>
+
 #include <QDialog>
-#include <QDialogButtonBox>
 #include <QObject>
-#include <QSql>
-#include <QSqlDatabase>
-#include <QSqlDriver>
-#include <QSqlQueryModel>
-#include <QSqlRelationalTableModel>
-#include <QSqlTableModel>
 #include <QTableView>
-#include <QTableWidget>
+#include <QAbstractItemView>
 #include <QWidget>
+#include <QTableWidget>
+#include <QSql>
+#include <QSqlDriver>
+#include <QSqlDatabase>
+#include <QDialogButtonBox>
+#include <QSqlRelationalTableModel>
+#include <QAbstractTableModel>
+#include <QSqlTableModel>
+#include <QSqlQueryModel>
+#include "edit_database.h"
 #include "ui_edit_database.h"
 
-//QDialog *edb = new Edit_DataBase(this);
-//edb->open();
+
+   //QDialog *edb = new Edit_DataBase(this);
+   //edb->open();
+
+
+
 
 Edit_DataBase::Edit_DataBase(QWidget *parent)
     : QWidget(parent)
@@ -106,3 +111,5 @@ void Edit_DataBase::reject()  // <----Slot-----
 
 }
 */
+
+

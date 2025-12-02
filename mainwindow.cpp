@@ -8,6 +8,7 @@
 
 #include <QIcon>
 #include <QIconEngine>
+#include <QIconEnginePlugin>
 #include <QMainWindow>
 #include <QObject>
 #include <QSqlQuery>
@@ -456,6 +457,7 @@ void MainWindow::on_actionAbout_ChemCalc_triggered()
     // Set first tab as current tab when opening.
     myDialog->ui->tabWidget->setCurrentWidget(myDialog->ui->tab);
     myDialog->open();
+    // myDialog->exec();
 }
 
 void MainWindow::cc_msgBox(QString msgText, QString msgText2, QString msgText3, MainWindow *parent)
@@ -1388,7 +1390,7 @@ void MainWindow::on_pushButton_Calculate_clicked()
         // Use density  and desired_grams.
         qDebug() << "Entered calculate step 4D. ";
         grams_needed = desired_grams;
-        ml_needed = (grams_needed / density) * 1000;
+        ml_needed = (grams_needed / density);
         format_ml_answer(ml_needed); // Format and post answer to box.
         qDebug() << "ml_needed = " << ml_needed;
     }

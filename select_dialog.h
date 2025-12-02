@@ -3,11 +3,11 @@
 
 // #include "qmainwindow.h"
 #include <QDialog>
-#include <QObject>
+#include <QtGui>
 #include <QSql>
+#include <QObject>
 #include <QSqlTableModel>
 #include <QTableView>
-#include <QtGui>
 
 namespace Ui {
 class Select_Dialog;
@@ -25,7 +25,7 @@ public:
     void chem_db_insert(QString reagent, double mw);
     int chem_db_read(QString reagent_fragment);
 
-    friend class MainWindow; //Allows access to MainWindow functions/
+    friend class MainWindow;  //Allows access to MainWindow functions/
 
     //------------------------------------------------
     //These declarations have class(?) scope,
@@ -50,6 +50,7 @@ private slots:
     void on_pushButton_OK_clicked();
 
 private:
+
 };
 
 #endif // SELECT_DIALOG_H

@@ -2,8 +2,8 @@
 #define mPRINTDIALOG_H
 
 #include <QDialog>
-#include <QObject>
 #include <QPrinter>
+#include <QObject>
 #include <QTextEdit>
 
 namespace Ui {

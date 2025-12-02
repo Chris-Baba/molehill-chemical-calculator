@@ -1,9 +1,9 @@
 #include <QMainWindow>
 #include <QObject>
 
-#include "mainwindow.h"
 #include "preferences_dialog.h"
 #include "ui_preferences_dialog.h"
+#include "mainwindow.h"
 
 Preferences_Dialog::Preferences_Dialog(QWidget *parent)
     : QDialog(parent)
@@ -13,15 +13,13 @@ Preferences_Dialog::Preferences_Dialog(QWidget *parent)
 
     // Set checkboxes to reflect configuration file status.
     MainWindow myObj;
-    if (myObj.g_NetworkAccessPermission == true) {
+    if (myObj.g_NetworkAccessPermission == true){
         ui->checkBox_Allow->setChecked(true);
-    } else
-        ui->checkBox_Allow->setChecked(false);
+    }else ui->checkBox_Allow->setChecked(false);
 
-    if (myObj.g_NetworkAccessDontAskAgain == true) {
+    if (myObj.g_NetworkAccessDontAskAgain== true){
         ui->checkBox_DontAsk->setChecked(true);
-    } else
-        ui->checkBox_DontAsk->setChecked(false);
+    }else ui->checkBox_DontAsk->setChecked(false);
 }
 
 Preferences_Dialog::~Preferences_Dialog()
@@ -43,14 +41,18 @@ void Preferences_Dialog::on_buttonBox_accepted()
     myObj.parseConfigFile("NetworkAccessAsked ", true, true);
     myObj.parseConfigFile("NetworkAccessDontAskAgain ", true, dontAsk);
     myObj.setConfigGlobals();
-    done(1); //closes dialog and returns int "1"?
+    done(1);  //closes dialog and returns int "1"?
 
-    qDebug() << "In runAtStart g_NetworkAccessPermission = " << myObj.g_NetworkAccessPermission;
-    qDebug() << "In runAtStart g_NetworkAccessAsked = " << myObj.g_NetworkAccessAsked;
-    qDebug() << "In runAtStart g_NetworkAccessDontAskAgain = " << myObj.g_NetworkAccessDontAskAgain;
+    qDebug() << "In runAtStart g_NetworkAccessPermission = "
+             << myObj.g_NetworkAccessPermission;
+    qDebug() << "In runAtStart g_NetworkAccessAsked = "
+             << myObj.g_NetworkAccessAsked;
+    qDebug() << "In runAtStart g_NetworkAccessDontAskAgain = "
+             << myObj.g_NetworkAccessDontAskAgain;
 }
 
 void Preferences_Dialog::on_buttonBox_rejected()
 {
-    done(2); //closes dialog and returns int "2"?
+    done(2);  //closes dialog and returns int "2"?
 }
+
