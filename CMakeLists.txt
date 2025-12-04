@@ -74,14 +74,14 @@ target_link_libraries(chemcalc PRIVATE Qt${QT_VERSION_MAJOR}::Xml)
 # If you are developing for iOS or macOS you should consider setting an
 # explicit, fixed bundle identifier manually though.
 if(${QT_VERSION} VERSION_LESS 6.1.0)
-  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.chemcalc)
+  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.github.chris_baba.molehill)
 endif()
 set_target_properties(chemcalc PROPERTIES
     ${BUNDLE_ID_OPTION}
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
-    MACOSX_BUNDLE TRUE
-    WIN32_EXECUTABLE TRUE
+    MACOSX_BUNDLE FALSE
+    WIN32_EXECUTABLE FALSE
 )
 
 # See https://cmake.org/cmake/help/latest/module/GNUInstallDirs.html
@@ -103,7 +103,26 @@ if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(chemcalc)
 endif()
 
-## Note: The next steps are DEPLOYMENT (windeployqt.exe,
-## and make a INSTALLER (~/Qt/Tools/QtInstallerFramework/4.10/bin/binarycreator).
-## See https://doc.qt.io/qtinstallerframework/ifw-tutorial.html
+## Delay for 2 seconds to let deployment work correctly.
+# file(LOCK C:/Users/chris/Documents/molehill-win11/build/MinGW-Release/chemcalc.exe TIMEOUT 2)
 
+## Note: The next steps are DEPLOYMENT (windeployqt.exe),
+## and INSTALLER (~/Qt/Tools/QtInstallerFramework/4.10/bin/binarycreator).
+## See https://doc.qt.io/qtinstallerframework/ifw-tutorial.html
+## Deployment executable is at "C:\Qt\6.10.1\mingw_64\bin\windeployqt.exe",
+## but this may need a first time setup, see docs.
+##
+##---DEPLOYMENT SECTION-----
+# 1) CD "C:\Users\chris\Documents\molehill-win11\molehill-win-installer\packages\com.github.chris_baba.molehill_chemical_calculator\data"
+# 2) C:\Qt\6.10.1\mingw_64\bin\windeployqt.exe C:\Users\chris\Documents\molehill-win11\build\Desktop_Qt_6_10_1_MinGW_64_bit-Release\chemcalc.exe
+## I got this Warning: Cannot find any version of the dxcompiler.dll and dxil.dll.
+##
+##---INSTALLER SECTION------
+# 3) CD C:\Users\chris\Documents\molehill-win11\molehill-win-installer
+## ------Run following 5 lines as one command:-----
+# 4) C:\Qt\Tools\QtInstallerFramework\4.10\bin\binarycreator.exe --offline-only
+# -t C:\Qt\Tools\QtInstallerFramework\4.10\bin\installerbase.exe
+# -p C:\Users\chris\Documents\molehill-win11\molehill-win-installer\packages
+# -c C:\Users\chris\Documents\molehill-win11\molehill-win-installer\config\config.xml
+# Molehill_Installer.exe
+##--------------------
